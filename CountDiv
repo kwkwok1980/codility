@@ -1,0 +1,6 @@
+int solution(int A, int B, int K) {
+    int C = A/K * K;
+    int D = B/K * K;
+    int result = (D - C) / K + 1 + (C < A ? -1 : 0);
+    return result;
+}
