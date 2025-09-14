@@ -1,14 +1,26 @@
 std::vector<int> solution(int N, std::vector<int>& values) {
-    std::vector<int> results (N, 0);
     int max = 0;
+    int last = 0;
+    std::unordered_map<int, int> result_map{};
     for (int value : values) {
         if (value == (N+1)) {
-            std::fill(results.begin(), results.end(), max);
+            result_map.clear();
+            last = max;
         } else {
-            int index = value - 1;
-            results[index] = results[index] + 1;
-            max = std::max(max, results[index]);
+            if (auto it = result_map.find(value); it != result_map.end()) {
+                int& result = it->second;
+                ++result;
+                max = std::max(result, max);
+            } else {
+                int result = last + 1;
+                result_map[value] = result;
+                max = std::max(result, max);
+            }
         }
     }
-    return results;
+    std::vector<int> result_list (N, last);
+    for (auto [k, v] : result_map) {
+        result_list[k-1] = v;
+    }
+    return result_list;
 }
