@@ -1,0 +1,35 @@
+#include <unordered_map>
+#include <unordered_set>
+#include <limits>
+#include <algorithm>
+#include <stack>
+#include <string>
+#include <iostream>
+#include <vector>
+#include <list>
+#include <queue>
+#include <cmath>
+// you can use includes, for example:
+// #include <algorithm>
+
+// you can write to stdout for debugging purposes, e.g.
+// cout << "this is a debug message" << endl;
+
+bool solution_impl(std::vector<int>& A, std::vector<int>& B, std::vector<int>& C) {
+
+
+}
+
+
+int solution(std::vector<int>& A, std::vector<int>& B, std::vector<int>& C) {
+    // Implement your solution here
+}
+
+
+int main() {
+    std::vector<int> A = {1, 4, 5, 8};
+    std::vector<int> B = {4, 5, 9, 10};
+    std::vector<int> C = {4, 6, 7, 10, 2};
+    std::cout << solution(A, B, C) << std::endl;
+}
+
